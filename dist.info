@@ -1,0 +1,11 @@
+--- This file is part of LuaDist project
+
+name = "ogg"
+version = "1.3.1"
+
+desc = "Ogg library."
+author = "The oggvorbis people"
+license = "A BSD-STYLE SOURCE LICENSE"
+url = "http://xiph.org/"
+maintainer = "Francois Coulombe"
+
