@@ -14,7 +14,16 @@ include ( CheckIncludeFile )
 	include_directories("${PROJECT_SOURCE_DIR}/include")
 	include_directories("${PROJECT_SOURCE_DIR}/include/ogg")
 
-
+set(SIZE16 int16_t)
+set(USIZE16 uint16_t)
+set(SIZE32 int32_t)
+set(USIZE32 uint32_t)
+set(SIZE64 int64_t)
+set(USIZE64 uint64_t)
+configure_file (
+  "${PROJECT_SOURCE_DIR}/include/ogg/config_types.h.in"
+  "${PROJECT_BINARY_DIR}/config_types.h"
+  )
 # First, compiler definitions for building the library
 	ADD_DEFINITIONS(-D_USRDLL)
 	ADD_DEFINITIONS(-DLIBOGG_EXPORTS)
@@ -34,6 +43,7 @@ ENDIF()
 
 # Install Ogg Headers
 	install_header(include/)
+	install_header("${PROJECT_BINARY_DIR}/config_types.h" INTO "ogg/")
 
 
 
